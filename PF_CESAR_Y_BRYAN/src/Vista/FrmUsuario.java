@@ -52,7 +52,7 @@ public class FrmUsuario extends JFrame {
 
         btnFuncionario.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-               // new (true); // Funcionario
+               new (true); // Funcionario
                 dispose();
             }
         });
