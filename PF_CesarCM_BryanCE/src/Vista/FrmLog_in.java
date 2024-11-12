@@ -1,6 +1,11 @@
 package PF_CesarCM_BryanCE.src.Vista;
 import javax.swing.*;
+
+import PF_CesarCM_BryanCE.src.Modelo.conexion;
+
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class FrmLog_in extends JFrame {
     public FrmLog_in (){
@@ -49,7 +54,7 @@ public class FrmLog_in extends JFrame {
         Salirbtn.setFont(new Font("Arial",Font.BOLD,16));
         Salirbtn.setBorderPainted(false);
         Salirbtn.setContentAreaFilled(false);
-        
+
         //*Ubicaciones */
         cuadro.setBounds(340,80,500,500);
         Bienvenida.setBounds(440,90,350,80);
@@ -80,5 +85,23 @@ public class FrmLog_in extends JFrame {
         Ventana.add(Imagen);
         Ventana.setVisible(true);
         
-        }//Fin del constructor
+
+
+        Ingresarbtn.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String usuario = usuarioField.getText();
+                String contraseña = new String(contraseñaField.getPassword());
+
+                boolean autenticado = conexion.autenticacion(usuario, contraseña);
+
+                if (autenticado) {
+                    JOptionPane.showMessageDialog(null, "Autenticación exitosa. Bienvenido " + usuario + "!");
+                    // Aquí puedes abrir la siguiente ventana si deseas
+                } else {
+                    JOptionPane.showMessageDialog(null, "Usuario o contraseña incorrectos.");
+                }
+            }
+        });
+    }//Fin del constructor
     }//Fin de la clase

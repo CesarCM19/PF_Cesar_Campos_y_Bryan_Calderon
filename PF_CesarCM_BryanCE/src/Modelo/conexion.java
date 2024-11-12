@@ -1,38 +1,39 @@
 package PF_CesarCM_BryanCE.src.Modelo;
 
 import java.sql.*;
-import javax.swing.*;
 
 public class conexion {
+    private static final String URL = "jdbc:mysql://localhost:3306/bd_proyecto_final";
+    private static final String USUARIO = "root";
+    private static final String CONTRASEÑA = "12345";
+
     public static Connection conectar() {
-            String URL = "jdbc:mysql://localhost:3306/bd_proyecto_final"; 
-            String usuario = "root"; 
-            String contraseña = "12345"; 
-    
-            try {
-                Connection conexion = DriverManager.getConnection(URL, usuario, contraseña);
-                return conexion;
-            } catch (SQLException e) {
-                e.printStackTrace();
-                return null;
-            }
+        try {
+            Connection conexion = DriverManager.getConnection(URL, USUARIO, CONTRASEÑA);
+            System.out.println("Conexión exitosa a la base de datos.");
+            return conexion;
+        } catch (SQLException e) {
+            System.err.println("Error de conexión: " + e.getMessage());
+            return null;
         }
-                //* Método de autenticación
-        public static boolean autenticacion (String contraseña, String login){
-            String sql = "SELECT * FROM autenticacion WHERE login = ? AND contraseña = ?;";
-                Connection conexion = conectar();
-                if (conexion==null){
-                    JOptionPane.showMessageDialog(null,"No se ha podido realizar la conexión con la base de datos!");
-                } 
-                try(PreparedStatement Sentencia = conexion.prepareStatement(sql)){
-                    Sentencia.setString(1, login);
-                    Sentencia.setString(2,contraseña);
-                    ResultSet rs = Sentencia.executeQuery();
-                    return rs.next(); //*"Lee el siguiente" y retorna true cuando hay un resultado
-                }catch(SQLException e){
-                    e.printStackTrace();
-                    return false;
-                }
-            
-        };
+    }
+
+    // Método de autenticación
+    public static boolean autenticacion(String usuario, String contraseña) {
+        String sql = "{CALL AutenticarUsuario(?, ?, ?)}";
+        try (Connection conn = conectar();
+             CallableStatement stmt = conn.prepareCall(sql)) {
+
+            stmt.setString(1, usuario);
+            stmt.setString(2, contraseña);
+            stmt.registerOutParameter(3, Types.BOOLEAN);
+
+            stmt.execute();
+            return stmt.getBoolean(3); // Retorna true si el usuario es autenticado, false si no
+
+        } catch (SQLException e) {
+            System.err.println("Error en autenticación: " + e.getMessage());
+            return false;
+        }
+    }
 }
