@@ -52,7 +52,7 @@ public class FrmUsuario extends JFrame {
 
         btnFuncionario.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                new (true); // Funcionario
+               // new (true); // Funcionario
                 dispose();
             }
         });
@@ -68,5 +68,8 @@ public class FrmUsuario extends JFrame {
         boton.setFocusPainted(false);
         boton.setBorderPainted(false);
         boton.setPreferredSize(new Dimension(150, 40));
+    }
+    public static void main(String[] args) {
+        new FrmUsuario();
     }
 }
