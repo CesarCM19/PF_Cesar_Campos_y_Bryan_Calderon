@@ -1,4 +1,4 @@
-package Vista;
+package PF_CesarCM_BryanCE.src.Vista;
 import javax.swing.*;
 import java.awt.*;
 
