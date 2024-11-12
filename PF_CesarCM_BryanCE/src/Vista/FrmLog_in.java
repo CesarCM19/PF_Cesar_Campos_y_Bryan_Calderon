@@ -15,16 +15,22 @@ public class FrmLog_in extends JFrame {
         Ventana.setResizable(false);
 
         //* Configuración del fondo */
-        ImageIcon Back = new ImageIcon("C:\\Users\\Usuario\\Documents\\GitHub\\PF_Cesar_Campos_y_Bryan_Calderon\\Images\\RestauranteFondo.png");
+        ImageIcon Back = new ImageIcon("PF_CesarCM_BryanCE\\src\\Images\\RestauranteFondo.png");
+        ImageIcon RestauranteImg = new ImageIcon("PF_CesarCM_BryanCE\\src\\Images\\icons8-restaurant-100.png");
+        ImageIcon RestauranteImg2 = new ImageIcon("PF_CesarCM_BryanCE\\src\\Images\\icons8-restaurant-100.png");
+        JLabel Restaurante = new JLabel(RestauranteImg);
+        JLabel Restaurante2 = new JLabel(RestauranteImg2);
         JLabel Imagen = new JLabel(Back);
         Imagen.setSize(Back.getIconWidth(), Back.getIconHeight());
         JPanel cuadro = new JPanel ();
         cuadro.setBackground(new Color(245, 225, 206));
-        cuadro.setBounds(340,80,500,500);
+        
 
         //*Mensajes */
-        JLabel Bienvenida = new JLabel("Bienvenido al sistema de restaurantes");
-        Bienvenida.setLocation(0,0);
+        JLabel Bienvenida = new JLabel("Bienvenido al sistema de gestión");
+        JLabel Bienvenida2 = new JLabel("De Reservas");
+        Bienvenida.setFont(new Font("Arial",Font.BOLD,20));
+        Bienvenida2.setFont(new Font("Arial",Font.BOLD,20));
         JLabel user = new JLabel("Usuario:");
         JLabel contraseña = new JLabel("Contraseña:");
 
@@ -36,10 +42,38 @@ public class FrmLog_in extends JFrame {
 
         //*Botones */
         JButton Ingresarbtn = new JButton("Iniciar sesión");
-        Ingresarbtn.setBounds(0,0,100,100);
+        Ingresarbtn.setFont(new Font("Arial",Font.BOLD,16));
+        Ingresarbtn.setBorderPainted(false);
+        Ingresarbtn.setContentAreaFilled(false);
         JButton Salirbtn = new JButton("Salir");
-        Salirbtn.setBounds(0,0,100,100);
+        Salirbtn.setFont(new Font("Arial",Font.BOLD,16));
+        Salirbtn.setBorderPainted(false);
+        Salirbtn.setContentAreaFilled(false);
+        
+        //*Ubicaciones */
+        cuadro.setBounds(340,80,500,500);
+        Bienvenida.setBounds(440,90,350,80);
+        Bienvenida2.setBounds(530,130,300,100);
+        Ingresarbtn.setBounds(580,500,150,50);
+        Salirbtn.setBounds(430,500,150,50);
+        user.setBounds(390,250,150,40);
+        usuarioField.setBounds(390,300,400,40);    
+        contraseña.setBounds(390,360,150,40);
+        contraseñaField.setBounds(390,400,400,40);
+        //Copas.setBounds(350,100,100,100);
+        Restaurante.setBounds(380,150,100,100);
+        Restaurante2.setBounds(700,150,100,100);
+        
+        
         //*Agregar Elementos */
+        Ventana.add(Restaurante);
+        Ventana.add(Restaurante2);
+        Ventana.add(Bienvenida2);
+        Ventana.add(Bienvenida);
+        Ventana.add(user);
+        Ventana.add(contraseña);
+        Ventana.add(contraseñaField);
+        Ventana.add(usuarioField);
         Ventana.add(Ingresarbtn);
         Ventana.add(Salirbtn);
         Ventana.add(cuadro);
