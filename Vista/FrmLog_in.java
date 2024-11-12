@@ -34,10 +34,16 @@ public class FrmLog_in extends JFrame {
         JTextField usuarioField = new JTextField();
         Usertxt = usuarioField.getText();
 
+        //*Botones */
+        JButton Ingresarbtn = new JButton("Iniciar sesión");
+        Ingresarbtn.setBounds(0,0,100,100);
+        JButton Salirbtn = new JButton("Salir");
+        Salirbtn.setBounds(0,0,100,100);
         //*Agregar Elementos */
+        Ventana.add(Ingresarbtn);
+        Ventana.add(Salirbtn);
         Ventana.add(cuadro);
         Ventana.add(Imagen);
-        
         Ventana.setVisible(true);
         
         }//Fin del constructor

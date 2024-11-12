@@ -1,12 +1,11 @@
 package Modelo;
 
-import Vista.FrmPostular;
+import java.sql.*;
+import javax.swing.*;
 
-public class Conexion {
-
-        //* Método para establecer la conexión con la base de datos MySQL
-        public static Connection conectar() {
-            String URL = "jdbc:mysql://localhost:3306/bd_proyecto"; 
+public class conexion {
+    public static Connection conectar() {
+            String URL = "jdbc:mysql://localhost:3306/bd_proyecto_final"; 
             String usuario = "root"; 
             String contraseña = "12345"; 
     
@@ -18,8 +17,7 @@ public class Conexion {
                 return null;
             }
         }
-        
-        //* Método de autenticación
+                //* Método de autenticación
         public static boolean autenticacion (String contraseña, String login){
             String sql = "SELECT * FROM autenticacion WHERE login = ? AND contraseña = ?;";
                 Connection conexion = conectar();
@@ -36,4 +34,5 @@ public class Conexion {
                     return false;
                 }
             
-        };}
+        };
+}
