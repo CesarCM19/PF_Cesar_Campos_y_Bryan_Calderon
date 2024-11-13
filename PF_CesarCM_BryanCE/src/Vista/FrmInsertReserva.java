@@ -4,6 +4,8 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
+import PF_CesarCM_BryanCE.src.Modelo.InsertReservaDAO;
+
 
 public class FrmInsertReserva extends JFrame {
     public FrmInsertReserva(){
@@ -53,6 +55,25 @@ public class FrmInsertReserva extends JFrame {
         Salirbtn.setFont(new Font("Arial",Font.BOLD,16));
         Salirbtn.setBorderPainted(false);
         Salirbtn.setContentAreaFilled(false);
+
+        Insertbtn.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String NumeroMesa = NumMesaField.getText();
+                String Cedula = CedulaField.getText();
+                String Fecha = FechaField.getText();
+                String idRestaurante = IDRestauranteField.getText();
+                String Descripcion = DescripcionField.getText();
+        
+                boolean autenticado = InsertReservaDAO.insertarReserva(NumeroMesa,Cedula,idRestaurante,Fecha,Descripcion);
+        
+                if (autenticado) {
+                    JOptionPane.showMessageDialog(null, "Reserva guardada exitosamente!");
+                } else {
+                    JOptionPane.showMessageDialog(null, "Ha ocurrido un error");
+                }
+            }
+        });
 
         //*Ubicaciones */
         cuadro.setBounds(340,40,500,600);
