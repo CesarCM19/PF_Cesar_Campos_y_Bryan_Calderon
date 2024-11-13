@@ -33,16 +33,20 @@ public class FrmActualizarMesa extends JFrame {
 
         //* Título */
         JLabel titleLabel = new JLabel("Actualizar Mesa");
+        JLabel Mesaslbl = new JLabel("Mesas:");
+        Mesaslbl.setFont(new Font("Arial", Font.BOLD, 23));
+        Mesaslbl.setBounds(400, 100, 300, 40);
         titleLabel.setFont(new Font("Arial", Font.BOLD, 23));
-        titleLabel.setBounds(450, 20, 300, 40);
+        titleLabel.setBounds(480, 20, 300, 40);
         cuadro.add(titleLabel);
+        cuadro.add(Mesaslbl);
 
         //* Tabla de Mesas */
         String[] columnas = {"Número Mesa", "ID Restaurante", "Ubicación", "Tamaño"};
         modeloTabla = new DefaultTableModel(columnas, 0);
         tablaMesas = new JTable(modeloTabla);
         JScrollPane scrollPane = new JScrollPane(tablaMesas);
-        scrollPane.setBounds(50, 80, 700, 250);
+        scrollPane.setBounds(50, 150, 700, 250);
         cuadro.add(scrollPane);
 
         //* Campos de edición */
