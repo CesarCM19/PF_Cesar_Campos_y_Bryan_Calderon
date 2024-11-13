@@ -22,7 +22,7 @@ public class conexion {
     public static boolean autenticacion(String usuario, String contraseña) {
         String sql = "{CALL AutenticarUsuario(?, ?, ?)}";
         try (Connection conn = conectar();
-             CallableStatement stmt = conn.prepareCall(sql)) {
+            CallableStatement stmt = conn.prepareCall(sql)) {
 
             stmt.setString(1, usuario);
             stmt.setString(2, contraseña);
