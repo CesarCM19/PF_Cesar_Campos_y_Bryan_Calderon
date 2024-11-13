@@ -30,8 +30,7 @@ public class FrmMenuPrincipal extends JFrame {
         // Ajusta la imagen para que cubra todo el espacio
         ImageIcon scaledImage = new ImageIcon(backImage.getImage().getScaledInstance(getWidth(), getHeight(), Image.SCALE_SMOOTH));
         backgroundLabel.setIcon(scaledImage);
-        ImageIcon Acceder = new ImageIcon("PF_CesarCM_BryanCE\\src\\Images\\icons8-usuario-hombre-verificado-50.png");
-        ImageIcon LogOut= new ImageIcon("PF_CesarCM_BryanCE\\src\\Images\\icons8-cambiar-usuario-masculino-50.png");
+        
         ImageIcon IngresarReserva = new ImageIcon("PF_CesarCM_BryanCE\\src\\Images\\icons8-añadir-usuario-masculino-50.png");
         ImageIcon DeleteReserva = new ImageIcon("PF_CesarCM_BryanCE\\src\\Images\\icons8-delete-user-male-50.png");
         ImageIcon UpdateReserva = new ImageIcon("PF_CesarCM_BryanCE\\src\\Images\\icons8-editar-usuario-masculino-50.png");

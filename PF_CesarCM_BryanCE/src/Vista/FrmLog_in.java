@@ -21,10 +21,13 @@ public class FrmLog_in extends JFrame {
         ImageIcon Back = new ImageIcon("PF_CesarCM_BryanCE\\src\\Images\\RestauranteFondo.png");
         ImageIcon RestauranteImg = new ImageIcon("PF_CesarCM_BryanCE\\src\\Images\\icons8-restaurant-100.png");
         ImageIcon RestauranteImg2 = new ImageIcon("PF_CesarCM_BryanCE\\src\\Images\\icons8-restaurant-100.png");
+        ImageIcon Acceder = new ImageIcon("PF_CesarCM_BryanCE\\src\\Images\\icons8-usuario-hombre-verificado-50.png");
+        ImageIcon LogOut= new ImageIcon("PF_CesarCM_BryanCE\\src\\Images\\icons8-cambiar-usuario-masculino-50.png");
         JLabel Restaurante = new JLabel(RestauranteImg);
         JLabel Restaurante2 = new JLabel(RestauranteImg2);
         JLabel Imagen = new JLabel(Back);
         Imagen.setSize(Back.getIconWidth(), Back.getIconHeight());
+        
         
           //* Panel principal con efecto de transparencia */
         JPanel cuadro = new JPanel();
@@ -47,21 +50,23 @@ public class FrmLog_in extends JFrame {
         
 
         //*Botones */
-        JButton Ingresarbtn = new JButton("Iniciar sesión");
-        Ingresarbtn.setFont(new Font("Arial",Font.BOLD,16));
-        Ingresarbtn.setBorderPainted(false);
-        Ingresarbtn.setContentAreaFilled(false);
-        JButton Salirbtn = new JButton("Salir");
-        Salirbtn.setFont(new Font("Arial",Font.BOLD,16));
-        Salirbtn.setBorderPainted(false);
-        Salirbtn.setContentAreaFilled(false);
+        JButton Ingresarbtn = crearBoton("Iniciar sesión", 580, 500);
+        Ingresarbtn.setIcon(Acceder); // Asignar el ícono Acceder
+
+        JButton Salirbtn = crearBoton("Salir", 400, 500);
+        Salirbtn.setIcon(LogOut); // Asignar el ícono LogOut
+
+
+
+        
+        
 
         //*Ubicaciones */
         cuadro.setBounds(340,80,500,500);
         Bienvenida.setBounds(440,90,350,80);
         Bienvenida2.setBounds(530,130,300,100);
-        Ingresarbtn.setBounds(580,500,150,50);
-        Salirbtn.setBounds(430,500,150,50);
+        Ingresarbtn.setBounds(610,500,170,50);
+        Salirbtn.setBounds(400,500,150,50);
         user.setBounds(390,250,150,40);
         usuarioField.setBounds(390,300,400,40);    
         contraseña.setBounds(390,360,150,40);
@@ -114,4 +119,17 @@ public class FrmLog_in extends JFrame {
             }
         });
     }//Fin del constructor
+
+
+private JButton crearBoton(String texto, int x, int y) {
+    JButton boton = new JButton(texto);
+    boton.setFont(new Font("Arial", Font.BOLD, 16));
+    boton.setBounds(x, y, 200, 40);
+    boton.setBackground(new Color(186, 140, 99));
+    boton.setForeground(Color.WHITE);
+    boton.setFocusPainted(false);
+    boton.setBorder(BorderFactory.createLineBorder(new Color(186, 140, 99), 1, true));
+    boton.setContentAreaFilled(true);
+    boton.setOpaque(true);
+    return boton;}
     }//Fin de la clase
