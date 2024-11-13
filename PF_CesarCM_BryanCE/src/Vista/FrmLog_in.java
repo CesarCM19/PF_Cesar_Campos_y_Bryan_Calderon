@@ -25,6 +25,12 @@ public class FrmLog_in extends JFrame {
         JLabel Restaurante2 = new JLabel(RestauranteImg2);
         JLabel Imagen = new JLabel(Back);
         Imagen.setSize(Back.getIconWidth(), Back.getIconHeight());
+     
+          //* Panel principal con efecto de transparencia */
+          JPanel cuadro = new JPanel();
+          cuadro.setBackground(new Color(245, 225, 206, 80)); // Transparencia suave
+          cuadro.setBounds(340, 80, 500, 500);
+          cuadro.setLayout(null);
         JPanel cuadro = new JPanel ();
         cuadro.setBackground(new Color(245, 225, 206,150));
         
@@ -89,10 +95,18 @@ public class FrmLog_in extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 String usuario = usuarioField.getText();
                 String contraseña = new String(contraseñaField.getPassword());
-
+        
                 boolean autenticado = conexion.autenticacion(usuario, contraseña);
-
+        
                 if (autenticado) {
+                   
+                    // abrir la ventana del menú principal
+                    FrmMenuPrincipal menu = new FrmMenuPrincipal();  // Abre el menú
+                    menu.setVisible(true);  // Muestra la ventana
+        
+                    // Cerrar la ventana de login
+                    setVisible(false);  // Oculta la ventana 
+                    dispose();          // Libera los recursos 
                     JOptionPane.showMessageDialog(null, "Autenticación exitosa. Bienvenido " + usuario + " !");
                     // Aquí puedes abrir la siguiente ventana si deseas
                 } else {
@@ -100,6 +114,7 @@ public class FrmLog_in extends JFrame {
                 }
             }
         });
+        
         Salirbtn.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e){
