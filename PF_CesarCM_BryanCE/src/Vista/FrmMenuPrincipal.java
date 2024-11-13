@@ -96,7 +96,8 @@ public class FrmMenuPrincipal extends JFrame {
         btnInsertarReserva.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                JOptionPane.showMessageDialog(null, "Insertar Reserva seleccionada");
+                new FrmInsertReserva();
+                dispose();
             }
         });
 
