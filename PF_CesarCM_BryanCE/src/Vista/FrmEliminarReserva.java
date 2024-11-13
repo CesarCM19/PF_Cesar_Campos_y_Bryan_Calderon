@@ -44,7 +44,7 @@ public class FrmEliminarReserva extends JFrame {
 
         // Botones centrados
         JButton eliminarBtn = crearBoton("Eliminar Seleccionada", 100, 340);
-        JButton cancelarBtn = crearBoton("Cancelar", 400, 340);
+        JButton cancelarBtn = crearBoton("Regresar", 400, 340);
         
         // Botón "Regresar al menú"
         JButton regresarBtn = crearBoton("Regresar al Menú", 250, 400);

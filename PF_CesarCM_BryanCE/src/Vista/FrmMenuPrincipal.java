@@ -145,7 +145,7 @@ public class FrmMenuPrincipal extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 new FrmMostrarMesas();
-                dispose();A
+                dispose();
             }
         });
     

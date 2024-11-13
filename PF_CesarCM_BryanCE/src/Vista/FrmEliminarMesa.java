@@ -48,7 +48,7 @@ public class FrmEliminarMesa extends JFrame {
         eliminarBtn.setBounds (100, 340, 200, 40 );
 
 
-        JButton cancelarBtn = crearBoton("Cancelar", 450, 350);
+        JButton cancelarBtn = crearBoton("Regresar", 450, 350);
         cancelarBtn.setBounds (400, 340, 200, 40 );
 
 
