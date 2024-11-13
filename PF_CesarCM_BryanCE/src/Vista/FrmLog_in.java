@@ -99,6 +99,7 @@ public class FrmLog_in extends JFrame {
                 if (autenticado) {
                     // abrir la ventana del menú principal
                     FrmMenuPrincipal menu = new FrmMenuPrincipal(); 
+                    JOptionPane.showMessageDialog(null,"Bienvenido al sistema "+usuario+" ! ");
                     menu.setVisible(true);
                     Ventana.dispose();
                 } else {
