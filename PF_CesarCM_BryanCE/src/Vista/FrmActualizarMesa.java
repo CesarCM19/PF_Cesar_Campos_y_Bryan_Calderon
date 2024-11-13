@@ -87,14 +87,10 @@ JLabel imagen = new JLabel(back);
         tamanoField.setBounds(800, 340, 200, 30);
         cuadro.add(tamanoField);
 
-        //* Botón de actualizar */
-        JButton actualizarBtn = new JButton("Actualizar Mesa");
-        actualizarBtn.setBounds(800, 400, 200, 40);
+        JButton actualizarBtn = crearBoton("Actualizar Mesa", 800, 400);
         cuadro.add(actualizarBtn);
-
-        //* Botón de volver al menú principal */
-        JButton volverBtn = new JButton("Volver");
-        volverBtn.setBounds(800, 450, 200, 40);
+    
+        JButton volverBtn = crearBoton("Volver", 800, 450);
         cuadro.add(volverBtn);
 
         //* Agregar al contenedor principal */
@@ -198,6 +194,18 @@ JLabel imagen = new JLabel(back);
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, "Error al actualizar la mesa: " + ex.getMessage());
         }
+    }
+    private JButton crearBoton(String texto, int x, int y) {
+        JButton boton = new JButton(texto);
+        boton.setFont(new Font("Arial", Font.BOLD, 16));
+        boton.setBounds(x, y, 200, 40);
+        boton.setBackground(new Color(186, 140, 99));
+        boton.setForeground(Color.WHITE);
+        boton.setFocusPainted(false);
+        boton.setBorder(BorderFactory.createLineBorder(new Color(186, 140, 99), 1, true));
+        boton.setContentAreaFilled(true);
+        boton.setOpaque(true);
+        return boton;
     }
 //com
 }
