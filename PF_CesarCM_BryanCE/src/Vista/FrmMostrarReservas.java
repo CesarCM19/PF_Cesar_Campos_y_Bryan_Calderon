@@ -30,9 +30,11 @@ public class FrmMostrarReservas extends JFrame {
         Imagen.setSize(Back.getIconWidth(), Back.getIconHeight());
 
         // Título centrado
-        JLabel titleLabel = new JLabel("Ver Reservas");
+        JLabel titleLabel = new JLabel("Reservas Actuales");
         titleLabel.setFont(new Font("Arial", Font.BOLD, 20));
-        titleLabel.setBounds(350, 20, 250, 40);  // Centramos el título en el JFrame
+        titleLabel.setBounds(265, 20, 250, 40);
+        cuadro.add(titleLabel);
+
 
         // Configuración de la tabla
         String[] columnas = {"ID", "Número de Mesa", "Cédula", "ID Restaurante", "Fecha", "Descripción"};

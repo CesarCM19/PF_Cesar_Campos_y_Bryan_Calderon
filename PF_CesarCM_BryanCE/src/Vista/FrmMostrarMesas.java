@@ -31,9 +31,9 @@ public class FrmMostrarMesas extends JFrame {
         Imagen.setSize(Back.getIconWidth(), Back.getIconHeight());
 
         //* Título */
-        JLabel titleLabel = new JLabel("Ver Mesas");
+        JLabel titleLabel = new JLabel("Mesas Actuales");
         titleLabel.setFont(new Font("Arial", Font.BOLD, 20));
-        titleLabel.setBounds(300, 20, 250, 40);
+        titleLabel.setBounds(265, 20, 250, 40);
 
         //* Configuración de la tabla */
         String[] columnas = {"Número de Mesa", "ID Restaurante", "Ubicación", "Tamaño"};
@@ -50,6 +50,8 @@ public class FrmMostrarMesas extends JFrame {
         //* Añadir al contenedor principal */
         add(cuadro);
         add(Imagen);
+        cuadro.add(titleLabel);
+
         setVisible(true);
 
         // Llenar la tabla con las mesas

@@ -33,7 +33,7 @@ public class FrmEliminarMesa extends JFrame {
         //* Título */
         JLabel titleLabel = new JLabel("Eliminar Mesa");
         titleLabel.setFont(new Font("Arial", Font.BOLD, 20));
-        titleLabel.setBounds(300, 20, 250, 40);
+        titleLabel.setBounds(280, 20, 250, 40);
 
         //* Configuración de la tabla */
         String[] columnas = {"Número de Mesa", "ID Restaurante", "Ubicación", "Tamaño", "Eliminar"};
