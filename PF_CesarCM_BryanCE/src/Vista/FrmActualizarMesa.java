@@ -190,5 +190,5 @@ public class FrmActualizarMesa extends JFrame {
             JOptionPane.showMessageDialog(null, "Error al actualizar la mesa: " + ex.getMessage());
         }
     }
-
+//com
 }
