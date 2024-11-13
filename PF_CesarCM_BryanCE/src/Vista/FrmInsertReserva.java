@@ -10,7 +10,7 @@ import PF_CesarCM_BryanCE.src.Modelo.InsertReservaDAO;
 public class FrmInsertReserva extends JFrame {
     public FrmInsertReserva(){
         //*Configuración de la ventana */
-        JFrame Ventana = new JFrame("Log in");
+        JFrame Ventana = new JFrame("Reservas");
         Ventana.setDefaultCloseOperation(EXIT_ON_CLOSE);
         Ventana.setSize(1190,720);
         Ventana.setLocationRelativeTo(null);
@@ -47,11 +47,11 @@ public class FrmInsertReserva extends JFrame {
 
 
         //*Botones */
-        JButton Insertbtn = new JButton("Iniciar sesión");
+        JButton Insertbtn = new JButton("Guardar Reserva");
         Insertbtn.setFont(new Font("Arial",Font.BOLD,16));
         Insertbtn.setBorderPainted(false);
         Insertbtn.setContentAreaFilled(false);
-        JButton Salirbtn = new JButton("Salir");
+        JButton Salirbtn = new JButton("Atrás");
         Salirbtn.setFont(new Font("Arial",Font.BOLD,16));
         Salirbtn.setBorderPainted(false);
         Salirbtn.setContentAreaFilled(false);
@@ -69,17 +69,28 @@ public class FrmInsertReserva extends JFrame {
         
                 if (autenticado) {
                     JOptionPane.showMessageDialog(null, "Reserva guardada exitosamente!");
+                    FechaField.setText("");
+                    NumMesaField.setText("");
+                    CedulaField.setText("");
+                    DescripcionField.setText("");
+                    IDRestauranteField.setText("");
                 } else {
                     JOptionPane.showMessageDialog(null, "Ha ocurrido un error");
                 }
+            }
+        });
+        Salirbtn.addActionListener(new ActionListener() {
+            public void actionPerformed (ActionEvent e){
+                new FrmMenuPrincipal();
+                Ventana.dispose();
             }
         });
 
         //*Ubicaciones */
         cuadro.setBounds(340,40,500,600);
         Bienvenida.setBounds(420,70,350,80);
-        Insertbtn.setBounds(580,580,150,50);
-        Salirbtn.setBounds(430,580,150,50);
+        Insertbtn.setBounds(560,580,200,50);
+        Salirbtn.setBounds(410,580,150,50);
         Cedulalbl.setBounds(390,160,350,40);
         CedulaField.setBounds(390,200,400,40);
         Descripcion.setBounds(390,480,300,40);

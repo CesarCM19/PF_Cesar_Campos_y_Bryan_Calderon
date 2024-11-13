@@ -14,7 +14,7 @@ public class FrmEliminarMesa extends JFrame {
     public FrmEliminarMesa() {
         setTitle("Eliminar Mesa");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
-        setSize(800, 600);
+        setSize(1190, 720);
         setLocationRelativeTo(null);
         setResizable(false);
 
@@ -22,7 +22,7 @@ public class FrmEliminarMesa extends JFrame {
         JPanel cuadro = new JPanel();
         cuadro.setBackground(new Color(245, 225, 206, 180)); // Transparencia suave
         cuadro.setLayout(null);
-        cuadro.setBounds(50, 50, 700, 400);
+        cuadro.setBounds(250, 150, 700, 400);
 
         //* Configuración del fondo */
         ImageIcon Back = new ImageIcon("PF_CesarCM_BryanCE\\src\\Images\\RestauranteFondo.png");
