@@ -30,7 +30,18 @@ public class FrmMenuPrincipal extends JFrame {
         // Ajusta la imagen para que cubra todo el espacio
         ImageIcon scaledImage = new ImageIcon(backImage.getImage().getScaledInstance(getWidth(), getHeight(), Image.SCALE_SMOOTH));
         backgroundLabel.setIcon(scaledImage);
-    
+        ImageIcon Acceder = new ImageIcon("C:\\Users\\Usuario\\Documents\\GitHub\\PF_Cesar_Campos_y_Bryan_Calderon\\PF_CesarCM_BryanCE\\src\\Images\\icons8-usuario-hombre-verificado-50.png");
+        ImageIcon LogOut= new ImageIcon("C:\\Users\\Usuario\\Documents\\GitHub\\PF_Cesar_Campos_y_Bryan_Calderon\\PF_CesarCM_BryanCE\\src\\Images\\icons8-cambiar-usuario-masculino-50.png");
+        ImageIcon IngresarReserva = new ImageIcon("C:\\Users\\Usuario\\Documents\\GitHub\\PF_Cesar_Campos_y_Bryan_Calderon\\PF_CesarCM_BryanCE\\src\\Images\\icons8-añadir-usuario-masculino-50.png");
+        ImageIcon DeleteReserva = new ImageIcon("C:\\Users\\Usuario\\Documents\\GitHub\\PF_Cesar_Campos_y_Bryan_Calderon\\PF_CesarCM_BryanCE\\src\\Images\\icons8-delete-user-male-50.png");
+        ImageIcon UpdateReserva = new ImageIcon("C:\\Users\\Usuario\\Documents\\GitHub\\PF_Cesar_Campos_y_Bryan_Calderon\\PF_CesarCM_BryanCE\\src\\Images\\icons8-editar-usuario-masculino-50.png");
+        ImageIcon Mostrar = new ImageIcon("C:\\Users\\Usuario\\Documents\\GitHub\\PF_Cesar_Campos_y_Bryan_Calderon\\PF_CesarCM_BryanCE\\src\\Images\\icons8-find-user-male-50.png");
+        ImageIcon Añadir = new ImageIcon("C:\\Users\\Usuario\\Documents\\GitHub\\PF_Cesar_Campos_y_Bryan_Calderon\\PF_CesarCM_BryanCE\\src\\Images\\icons8-añadir-50.png");
+        ImageIcon Ver = new ImageIcon("C:\\Users\\Usuario\\Documents\\GitHub\\PF_Cesar_Campos_y_Bryan_Calderon\\PF_CesarCM_BryanCE\\src\\Images\\icons8-ver-50.png");
+        ImageIcon Eliminar = new ImageIcon("C:\\Users\\Usuario\\Documents\\GitHub\\PF_Cesar_Campos_y_Bryan_Calderon\\PF_CesarCM_BryanCE\\src\\Images\\icons8-borrar-para-siempre-50.png");
+        ImageIcon Actualizar= new ImageIcon("C:\\Users\\Usuario\\Documents\\GitHub\\PF_Cesar_Campos_y_Bryan_Calderon\\PF_CesarCM_BryanCE\\src\\Images\\icons8-actualizar-50.png");
+        ImageIcon Cerrar = new ImageIcon("C:\\Users\\Usuario\\Documents\\GitHub\\PF_Cesar_Campos_y_Bryan_Calderon\\PF_CesarCM_BryanCE\\src\\Images\\icons8-cambiar-usuario-masculino-50.png");
+
         layeredPane.add(backgroundLabel, JLayeredPane.DEFAULT_LAYER); // Agrega la imagen de fondo en la capa inferior
     
         //* Panel principal con efecto de transparencia */
@@ -40,12 +51,12 @@ public class FrmMenuPrincipal extends JFrame {
     
         //* Panel izquierdo - Reservas */
         JPanel panelReservas = new JPanel(null);
-        panelReservas.setBackground(new Color(245, 225, 206, 80)); // Color semitransparente 
+        panelReservas.setBackground(new Color(245, 225, 206, 120)); // Color semitransparente 
         panelReservas.setBounds(0, 0, 495, 600);
     
         //* Panel derecho - Mesas */
         JPanel panelMesas = new JPanel(null);
-        panelMesas.setBackground(new Color(245, 225, 206, 80)); // Color semitransparente
+        panelMesas.setBackground(new Color(245, 225, 206, 120)); // Color semitransparente
         panelMesas.setBounds(495, 0, 495, 600);
     
         //* Títulos para cada sección */
@@ -67,16 +78,17 @@ public class FrmMenuPrincipal extends JFrame {
         separadorMesas.setBackground(Color.white);
     
         //* Botones para operaciones de Reservas */
-        JButton btnInsertarReserva = crearBoton("Insertar Reserva", 150, 100);
-        JButton btnActualizarReserva = crearBoton("Actualizar Reserva", 150, 200);
-        JButton btnMostrarReserva = crearBoton("Mostrar Reservas", 150, 300);
-        JButton btnEliminarReserva = crearBoton("Eliminar Reserva", 150, 400);
+        JButton btnInsertarReserva = crearBoton("Insertar Reserva ", 150, 100,IngresarReserva);
+        JButton btnActualizarReserva = crearBoton("Actualizar Reserva", 150, 200, UpdateReserva);
+        JButton btnMostrarReserva = crearBoton("Mostrar Reservas", 150, 300, Mostrar);
+        JButton btnEliminarReserva = crearBoton("Eliminar Reserva", 150, 400, DeleteReserva);
+        JButton Log_Out = crearBoton("Cerrar sesión",390,500, Cerrar ) ;
     
         //* Botones para operaciones de Mesas */
-        JButton btnInsertarMesa = crearBoton("Insertar Mesa", 150, 100);
-        JButton btnActualizarMesa = crearBoton("Actualizar Mesa", 150, 200);
-        JButton btnMostrarMesa = crearBoton("Mostrar Mesas", 150, 300);
-        JButton btnEliminarMesa = crearBoton("Eliminar Mesa", 150, 400);
+        JButton btnInsertarMesa = crearBoton("Insertar Mesa", 150, 100, Añadir);
+        JButton btnActualizarMesa = crearBoton("Actualizar Mesa", 150, 200, Actualizar);
+        JButton btnMostrarMesa = crearBoton("Mostrar Mesas", 150, 300, Ver);
+        JButton btnEliminarMesa = crearBoton("Eliminar Mesa", 150, 400, Eliminar);
     
         //* Agregar elementos a cada panel */
         panelReservas.add(lblReservas);
@@ -96,6 +108,7 @@ public class FrmMenuPrincipal extends JFrame {
         //* Añadir paneles al panel principal */
         panelPrincipal.add(panelReservas);
         panelPrincipal.add(panelMesas);
+        panelPrincipal.add(Log_Out);
     
         //* Añadir panel principal a la capa superior */
         layeredPane.add(panelPrincipal, JLayeredPane.PALETTE_LAYER);
@@ -156,6 +169,18 @@ public class FrmMenuPrincipal extends JFrame {
                 dispose();
             }
         });
+        btnActualizarReserva.addActionListener(new ActionListener(){
+            public void actionPerformed (ActionEvent e){
+                new FrmUpdateReserva();
+                dispose();
+            }
+        });
+        Log_Out.addActionListener(new ActionListener(){
+            public void actionPerformed (ActionEvent e){
+                new FrmLog_in();
+                dispose();
+            }
+        });
     
         setVisible(true);
         btnActualizarMesa.addActionListener(new ActionListener() {
@@ -171,10 +196,10 @@ public class FrmMenuPrincipal extends JFrame {
     }
     
 
-    private JButton crearBoton(String texto, int x, int y) {
-        JButton boton = new JButton(texto);
+    private JButton crearBoton(String texto, int x, int y, Icon Icono) {
+        JButton boton = new JButton(texto,Icono);
         boton.setFont(new Font("Arial", Font.BOLD, 16));
-        boton.setBounds(x, y, 200, 40);
+        boton.setBounds(x, y, 250, 50);
         
         // Colores amigables y neutros
         boton.setBackground(new Color(208, 199, 197)); 
