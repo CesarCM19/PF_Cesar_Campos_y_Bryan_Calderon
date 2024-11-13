@@ -78,7 +78,7 @@ public class FrmEliminarMesa extends JFrame {
             }
         });
 
-        //* Acción del botón Cancelar */
+        //* Acción del botón regresar */
         cancelarBtn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -86,9 +86,8 @@ public class FrmEliminarMesa extends JFrame {
                 setVisible(false);
                 dispose();
                 
-                // Crear y mostrar el menú principal (suponiendo que ya tienes una clase para ello)
-                // Ejemplo: Si tienes una clase llamada FrmMenuPrincipal
-                new FrmMenuPrincipal();  // Reemplaza FrmMenuPrincipal por el nombre de tu clase de menú
+                
+                new FrmMenuPrincipal();  
             }
         });
     }
