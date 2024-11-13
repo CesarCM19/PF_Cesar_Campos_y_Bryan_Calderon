@@ -50,11 +50,9 @@ public class FrmLog_in extends JFrame {
         
 
         //*Botones */
-        JButton Ingresarbtn = crearBoton("Iniciar sesión", 580, 500);
-        Ingresarbtn.setIcon(Acceder); // Asignar el ícono Acceder
+        JButton Ingresarbtn = crearBoton("Iniciar sesión", 613, 500, Acceder);
 
-        JButton Salirbtn = crearBoton("Salir", 400, 500);
-        Salirbtn.setIcon(LogOut); // Asignar el ícono LogOut
+        JButton Salirbtn = crearBoton("Salir", 400, 500, LogOut);
 
 
 
@@ -65,8 +63,8 @@ public class FrmLog_in extends JFrame {
         cuadro.setBounds(340,80,500,500);
         Bienvenida.setBounds(440,90,350,80);
         Bienvenida2.setBounds(530,130,300,100);
-        Ingresarbtn.setBounds(610,500,170,50);
-        Salirbtn.setBounds(400,500,150,50);
+        Ingresarbtn.setBounds(580,500,198,50);
+        Salirbtn.setBounds(400,500,130,50);
         user.setBounds(390,250,150,40);
         usuarioField.setBounds(390,300,400,40);    
         contraseña.setBounds(390,360,150,40);
@@ -121,15 +119,20 @@ public class FrmLog_in extends JFrame {
     }//Fin del constructor
 
 
-private JButton crearBoton(String texto, int x, int y) {
-    JButton boton = new JButton(texto);
-    boton.setFont(new Font("Arial", Font.BOLD, 16));
-    boton.setBounds(x, y, 200, 40);
-    boton.setBackground(new Color(186, 140, 99));
-    boton.setForeground(Color.WHITE);
-    boton.setFocusPainted(false);
-    boton.setBorder(BorderFactory.createLineBorder(new Color(186, 140, 99), 1, true));
-    boton.setContentAreaFilled(true);
-    boton.setOpaque(true);
-    return boton;}
+    private JButton crearBoton(String texto, int x, int y, Icon Icono) {
+        JButton boton = new JButton(texto,Icono);
+        boton.setFont(new Font("Arial", Font.BOLD, 16));
+        boton.setBounds(x, y, 300, 50);
+        
+        // Colores amigables y neutros
+        boton.setBackground(new Color(208, 199, 197)); 
+        boton.setForeground(new Color(63, 40, 31));    
+        
+        // Borde redondeado con color tierra
+        boton.setFocusPainted(false);
+        boton.setBorder(BorderFactory.createEmptyBorder(10, 20, 10, 20)); // Bordes redondeados visualmente
+        boton.setContentAreaFilled(true);
+        
+        return boton;
+}
     }//Fin de la clase
