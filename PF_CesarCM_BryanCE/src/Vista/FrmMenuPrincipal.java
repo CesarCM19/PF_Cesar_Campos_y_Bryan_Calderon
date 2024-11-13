@@ -132,7 +132,24 @@ public class FrmMenuPrincipal extends JFrame {
     
         setVisible(true);
 
-
+        btnMostrarReserva.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                new FrmMostrarReservas();
+                dispose();
+            }
+        });
+    
+        setVisible(true);
+        btnMostrarMesa.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                new FrmMostrarMesas();
+                dispose();A
+            }
+        });
+    
+        setVisible(true);
 
     }
     
