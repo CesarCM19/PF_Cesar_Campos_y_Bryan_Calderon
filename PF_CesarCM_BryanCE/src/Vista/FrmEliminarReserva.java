@@ -76,14 +76,17 @@ public class FrmEliminarReserva extends JFrame {
             }
         });
 
-        //* Acción del botón Cancelar */
-        cancelarBtn.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                setVisible(false);
-                dispose();
-            }
-        });
+       //* Acción del botón Cancelar */
+       cancelarBtn.addActionListener(new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            // Cerrar la ventana actual
+            setVisible(false);
+            dispose();
+            
+            new FrmMenuPrincipal();  
+        }
+    });
     }
 
     //* Método para cargar todas las reservas en la tabla usando el procedimiento almacenado */
@@ -160,7 +163,4 @@ public class FrmEliminarReserva extends JFrame {
         return boton;
     }
 
-    public static void main(String[] args) {
-        new FrmEliminarReserva();
-    }
 }
