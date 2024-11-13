@@ -110,6 +110,30 @@ public class FrmMenuPrincipal extends JFrame {
         });
     
         setVisible(true);
+
+        btnEliminarReserva.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                new FrmEliminarReserva();
+                dispose();
+            }
+        });
+    
+        setVisible(true);
+
+
+        btnEliminarMesa.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                new FrmEliminarMesa();
+                dispose();
+            }
+        });
+    
+        setVisible(true);
+
+
+
     }
     
 
