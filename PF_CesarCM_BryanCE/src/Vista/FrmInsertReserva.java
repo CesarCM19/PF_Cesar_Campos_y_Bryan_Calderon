@@ -112,7 +112,4 @@ public class FrmInsertReserva extends JFrame {
         Ventana.add(Imagen);
         Ventana.setVisible(true);
     }//Fin del constructor 
-    public static void main(String[] args) {
-        new FrmInsertReserva();
-    }
 }//Fin de la clase
