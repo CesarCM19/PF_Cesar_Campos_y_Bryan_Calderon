@@ -34,7 +34,7 @@ try (Connection conn = conectar();
     int comprobante = stmt.executeUpdate();
 
     // Mostrar mensaje según el valor de comprobante
-    if (comprobante>1) {
+    if (comprobante==1) {
         JOptionPane.showMessageDialog(null, "Inserción exitosa de la mesa.", "Éxito", JOptionPane.INFORMATION_MESSAGE);
         return true;
     } else {
@@ -44,7 +44,7 @@ try (Connection conn = conectar();
 
 } catch (SQLException e) {
     // Manejar errores de SQL y mostrar un mensaje de error
-    JOptionPane.showMessageDialog(null, "Error al insertar reserva: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+    JOptionPane.showMessageDialog(null, "Error al insertar la mesa: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
     return false;
 }
 }

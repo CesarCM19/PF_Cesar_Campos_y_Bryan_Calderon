@@ -3,8 +3,6 @@ package PF_CesarCM_BryanCE.src.Vista;
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
-
-import org.w3c.dom.events.MouseEvent;
 import PF_CesarCM_BryanCE.src.Modelo.InsertMesaDAO;
 
 public class FrmInsertMesa extends JFrame {
@@ -57,13 +55,7 @@ public class FrmInsertMesa extends JFrame {
                 String Ubicacion = UbicacionField.getText();
                 String Tamaño = TamañoField.getText();
         
-                boolean autenticado = InsertMesaDAO.insertMesa(NumeroMesa,IDRestaurante,Ubicacion,Tamaño);
-                
-                if (autenticado) {
-                    JOptionPane.showMessageDialog(null, "Reserva guardada exitosamente!");
-                } else {
-                    JOptionPane.showMessageDialog(null, "Ha ocurrido un error");
-                }
+                InsertMesaDAO.insertMesa(NumeroMesa,IDRestaurante,Ubicacion,Tamaño);
             }
         });
         Salirbtn.addActionListener(new ActionListener() {
@@ -107,7 +99,4 @@ public class FrmInsertMesa extends JFrame {
         Ventana.add(Imagen);
         Ventana.setVisible(true);
     }//Fin del constructor 
-    public static void main(String[] args) {
-        new FrmInsertMesa();
-    }
 }

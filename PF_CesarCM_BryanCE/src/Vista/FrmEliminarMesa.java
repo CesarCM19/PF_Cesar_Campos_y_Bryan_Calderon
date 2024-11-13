@@ -36,7 +36,7 @@ public class FrmEliminarMesa extends JFrame {
         titleLabel.setBounds(280, 20, 250, 40);
 
         //* Configuración de la tabla */
-        String[] columnas = {"Número de Mesa", "ID Restaurante", "Ubicación", "Tamaño", "Eliminar"};
+        String[] columnas = {"Número de Mesa", "ID Restaurante", "Ubicación", "Tamaño"};
         modeloTabla = new DefaultTableModel(columnas, 0);
         tablaMesas = new JTable(modeloTabla);
         JScrollPane scrollPane = new JScrollPane(tablaMesas);
@@ -82,12 +82,8 @@ public class FrmEliminarMesa extends JFrame {
         cancelarBtn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                // Cerrar la ventana actual
-                setVisible(false);
-                dispose();
-                
-                
                 new FrmMenuPrincipal();  
+                dispose();
             }
         });
     }

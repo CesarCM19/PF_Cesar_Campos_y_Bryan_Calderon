@@ -108,6 +108,14 @@ public class FrmMenuPrincipal extends JFrame {
                 dispose();
             }
         });
+        
+        btnInsertarMesa.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                new FrmInsertMesa();
+                dispose();
+            }
+        });
     
         setVisible(true);
 

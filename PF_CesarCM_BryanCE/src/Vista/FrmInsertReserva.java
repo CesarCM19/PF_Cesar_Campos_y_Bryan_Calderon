@@ -65,18 +65,7 @@ public class FrmInsertReserva extends JFrame {
                 String idRestaurante = IDRestauranteField.getText();
                 String Descripcion = DescripcionField.getText();
         
-                boolean autenticado = InsertReservaDAO.insertarReserva(NumeroMesa,Cedula,idRestaurante,Fecha,Descripcion);
-        
-                if (autenticado) {
-                    JOptionPane.showMessageDialog(null, "Reserva guardada exitosamente!");
-                    FechaField.setText("");
-                    NumMesaField.setText("");
-                    CedulaField.setText("");
-                    DescripcionField.setText("");
-                    IDRestauranteField.setText("");
-                } else {
-                    JOptionPane.showMessageDialog(null, "Ha ocurrido un error");
-                }
+                InsertReservaDAO.insertarReserva(NumeroMesa,Cedula,idRestaurante,Fecha,Descripcion);
             }
         });
         Salirbtn.addActionListener(new ActionListener() {
