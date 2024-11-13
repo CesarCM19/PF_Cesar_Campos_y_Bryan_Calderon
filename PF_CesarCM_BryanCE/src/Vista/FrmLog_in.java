@@ -9,8 +9,6 @@ import java.awt.event.ActionListener;
 
 public class FrmLog_in extends JFrame {
     public FrmLog_in (){
-        String Usertxt;
-        String Contraseñatxt;
 
         //*Configuración de la ventana */
         JFrame Ventana = new JFrame("Log in");
@@ -28,7 +26,7 @@ public class FrmLog_in extends JFrame {
         JLabel Imagen = new JLabel(Back);
         Imagen.setSize(Back.getIconWidth(), Back.getIconHeight());
         JPanel cuadro = new JPanel ();
-        cuadro.setBackground(new Color(245, 225, 206));
+        cuadro.setBackground(new Color(245, 225, 206,150));
         
 
         //*Mensajes */
@@ -41,9 +39,8 @@ public class FrmLog_in extends JFrame {
 
         //* Campos */
         JPasswordField contraseñaField = new JPasswordField();
-        Contraseñatxt = String.valueOf(contraseñaField.getPassword());
         JTextField usuarioField = new JTextField();
-        Usertxt = usuarioField.getText();
+        
 
         //*Botones */
         JButton Ingresarbtn = new JButton("Iniciar sesión");
@@ -96,11 +93,17 @@ public class FrmLog_in extends JFrame {
                 boolean autenticado = conexion.autenticacion(usuario, contraseña);
 
                 if (autenticado) {
-                    JOptionPane.showMessageDialog(null, "Autenticación exitosa. Bienvenido " + usuario + "!");
+                    JOptionPane.showMessageDialog(null, "Autenticación exitosa. Bienvenido " + usuario + " !");
                     // Aquí puedes abrir la siguiente ventana si deseas
                 } else {
                     JOptionPane.showMessageDialog(null, "Usuario o contraseña incorrectos.");
                 }
+            }
+        });
+        Salirbtn.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e){
+                System.exit(0);
             }
         });
     }//Fin del constructor
