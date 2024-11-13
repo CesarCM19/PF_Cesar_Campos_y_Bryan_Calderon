@@ -30,17 +30,17 @@ public class FrmMenuPrincipal extends JFrame {
         // Ajusta la imagen para que cubra todo el espacio
         ImageIcon scaledImage = new ImageIcon(backImage.getImage().getScaledInstance(getWidth(), getHeight(), Image.SCALE_SMOOTH));
         backgroundLabel.setIcon(scaledImage);
-        ImageIcon Acceder = new ImageIcon("C:\\Users\\Usuario\\Documents\\GitHub\\PF_Cesar_Campos_y_Bryan_Calderon\\PF_CesarCM_BryanCE\\src\\Images\\icons8-usuario-hombre-verificado-50.png");
-        ImageIcon LogOut= new ImageIcon("C:\\Users\\Usuario\\Documents\\GitHub\\PF_Cesar_Campos_y_Bryan_Calderon\\PF_CesarCM_BryanCE\\src\\Images\\icons8-cambiar-usuario-masculino-50.png");
-        ImageIcon IngresarReserva = new ImageIcon("C:\\Users\\Usuario\\Documents\\GitHub\\PF_Cesar_Campos_y_Bryan_Calderon\\PF_CesarCM_BryanCE\\src\\Images\\icons8-añadir-usuario-masculino-50.png");
-        ImageIcon DeleteReserva = new ImageIcon("C:\\Users\\Usuario\\Documents\\GitHub\\PF_Cesar_Campos_y_Bryan_Calderon\\PF_CesarCM_BryanCE\\src\\Images\\icons8-delete-user-male-50.png");
-        ImageIcon UpdateReserva = new ImageIcon("C:\\Users\\Usuario\\Documents\\GitHub\\PF_Cesar_Campos_y_Bryan_Calderon\\PF_CesarCM_BryanCE\\src\\Images\\icons8-editar-usuario-masculino-50.png");
-        ImageIcon Mostrar = new ImageIcon("C:\\Users\\Usuario\\Documents\\GitHub\\PF_Cesar_Campos_y_Bryan_Calderon\\PF_CesarCM_BryanCE\\src\\Images\\icons8-find-user-male-50.png");
-        ImageIcon Añadir = new ImageIcon("C:\\Users\\Usuario\\Documents\\GitHub\\PF_Cesar_Campos_y_Bryan_Calderon\\PF_CesarCM_BryanCE\\src\\Images\\icons8-añadir-50.png");
-        ImageIcon Ver = new ImageIcon("C:\\Users\\Usuario\\Documents\\GitHub\\PF_Cesar_Campos_y_Bryan_Calderon\\PF_CesarCM_BryanCE\\src\\Images\\icons8-ver-50.png");
-        ImageIcon Eliminar = new ImageIcon("C:\\Users\\Usuario\\Documents\\GitHub\\PF_Cesar_Campos_y_Bryan_Calderon\\PF_CesarCM_BryanCE\\src\\Images\\icons8-borrar-para-siempre-50.png");
-        ImageIcon Actualizar= new ImageIcon("C:\\Users\\Usuario\\Documents\\GitHub\\PF_Cesar_Campos_y_Bryan_Calderon\\PF_CesarCM_BryanCE\\src\\Images\\icons8-actualizar-50.png");
-        ImageIcon Cerrar = new ImageIcon("C:\\Users\\Usuario\\Documents\\GitHub\\PF_Cesar_Campos_y_Bryan_Calderon\\PF_CesarCM_BryanCE\\src\\Images\\icons8-cambiar-usuario-masculino-50.png");
+        ImageIcon Acceder = new ImageIcon("PF_CesarCM_BryanCE\\src\\Images\\icons8-usuario-hombre-verificado-50.png");
+        ImageIcon LogOut= new ImageIcon("PF_CesarCM_BryanCE\\src\\Images\\icons8-cambiar-usuario-masculino-50.png");
+        ImageIcon IngresarReserva = new ImageIcon("PF_CesarCM_BryanCE\\src\\Images\\icons8-añadir-usuario-masculino-50.png");
+        ImageIcon DeleteReserva = new ImageIcon("PF_CesarCM_BryanCE\\src\\Images\\icons8-delete-user-male-50.png");
+        ImageIcon UpdateReserva = new ImageIcon("PF_CesarCM_BryanCE\\src\\Images\\icons8-editar-usuario-masculino-50.png");
+        ImageIcon Mostrar = new ImageIcon("PF_CesarCM_BryanCE\\src\\Images\\icons8-find-user-male-50.png");
+        ImageIcon Añadir = new ImageIcon("PF_CesarCM_BryanCE\\src\\Images\\icons8-añadir-50.png");
+        ImageIcon Ver = new ImageIcon("PF_CesarCM_BryanCE\\src\\Images\\icons8-ver-50.png");
+        ImageIcon Eliminar = new ImageIcon("PF_CesarCM_BryanCE\\src\\Images\\icons8-borrar-para-siempre-50.png");
+        ImageIcon Actualizar= new ImageIcon("C:\\Users\\calde\\Documents\\GitHub\\PF_Cesar_Campos_y_Bryan_Calderon\\PF_CesarCM_BryanCE\\src\\Images\\icons8-actualizar-50.png");
+        ImageIcon Cerrar = new ImageIcon("PF_CesarCM_BryanCE\\src\\Images\\icons8-cambiar-usuario-masculino-50.png");
 
         layeredPane.add(backgroundLabel, JLayeredPane.DEFAULT_LAYER); // Agrega la imagen de fondo en la capa inferior
     
@@ -82,7 +82,7 @@ public class FrmMenuPrincipal extends JFrame {
         JButton btnActualizarReserva = crearBoton("Actualizar Reserva", 150, 200, UpdateReserva);
         JButton btnMostrarReserva = crearBoton("Mostrar Reservas", 150, 300, Mostrar);
         JButton btnEliminarReserva = crearBoton("Eliminar Reserva", 150, 400, DeleteReserva);
-        JButton Log_Out = crearBoton("Cerrar sesión",390,500, Cerrar ) ;
+        JButton Log_Out = crearBoton("Cerrar sesión",400,500, Cerrar ) ;
     
         //* Botones para operaciones de Mesas */
         JButton btnInsertarMesa = crearBoton("Insertar Mesa", 150, 100, Añadir);
@@ -106,9 +106,10 @@ public class FrmMenuPrincipal extends JFrame {
         panelMesas.add(btnEliminarMesa);
     
         //* Añadir paneles al panel principal */
+        panelPrincipal.add(Log_Out);
+
         panelPrincipal.add(panelReservas);
         panelPrincipal.add(panelMesas);
-        panelPrincipal.add(Log_Out);
     
         //* Añadir panel principal a la capa superior */
         layeredPane.add(panelPrincipal, JLayeredPane.PALETTE_LAYER);

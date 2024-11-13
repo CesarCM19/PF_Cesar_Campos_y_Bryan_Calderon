@@ -22,9 +22,13 @@ public class FrmActualizarMesa extends JFrame {
         setLayout(null);
 
         //* Configuración del fondo */
-        ImageIcon back = new ImageIcon("PF_CesarCM_BryanCE\\src\\Images\\RestauranteFondo.png");
-        JLabel imagen = new JLabel(back);
+        ImageIcon back = new ImageIcon(new ImageIcon("PF_CesarCM_BryanCE/src/Images/RestauranteFondo.png")
+        .getImage().getScaledInstance(getWidth(), getHeight(), Image.SCALE_SMOOTH));
+JLabel imagen = new JLabel(back);
         imagen.setBounds(0, 0, 1190, 720);
+
+
+        
 
         //* Panel principal transparente */
         JPanel cuadro = new JPanel();
