@@ -97,16 +97,11 @@ public class FrmLog_in extends JFrame {
                 boolean autenticado = conexion.autenticacion(usuario, contraseña);
         
                 if (autenticado) {
-                   
+                    dispose();
                     // abrir la ventana del menú principal
-                    FrmMenuPrincipal menu = new FrmMenuPrincipal();  // Abre el menú
-                    menu.setVisible(true);  // Muestra la ventana
-        
-                    // Cerrar la ventana de login
-                    setVisible(false);  // Oculta la ventana 
-                    dispose();          // Libera los recursos 
+                    FrmMenuPrincipal menu = new FrmMenuPrincipal(); 
+                    menu.setVisible(true);
                     JOptionPane.showMessageDialog(null, "Autenticación exitosa. Bienvenido " + usuario + " !");
-                    // Aquí puedes abrir la siguiente ventana si deseas
                 } else {
                     JOptionPane.showMessageDialog(null, "Usuario o contraseña incorrectos.");
                 }
