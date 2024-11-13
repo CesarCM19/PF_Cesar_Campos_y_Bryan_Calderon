@@ -35,7 +35,7 @@ public static boolean insertarReserva(String NumeroMesa, String Cedula, String I
         int comprobante = stmt.executeUpdate();
 
         // Mostrar mensaje según el valor de comprobante
-        if (comprobante==1) {
+        if (comprobante>0) {
             JOptionPane.showMessageDialog(null, "Reservado exitosamente.", "Éxito", JOptionPane.INFORMATION_MESSAGE);
             return true;
         } else {
