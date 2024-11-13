@@ -25,14 +25,12 @@ public class FrmLog_in extends JFrame {
         JLabel Restaurante2 = new JLabel(RestauranteImg2);
         JLabel Imagen = new JLabel(Back);
         Imagen.setSize(Back.getIconWidth(), Back.getIconHeight());
-     
+        
           //* Panel principal con efecto de transparencia */
-          JPanel cuadro = new JPanel();
+        JPanel cuadro = new JPanel();
           cuadro.setBackground(new Color(245, 225, 206, 80)); // Transparencia suave
-          cuadro.setBounds(340, 80, 500, 500);
-          cuadro.setLayout(null);
-        JPanel cuadro = new JPanel ();
-        cuadro.setBackground(new Color(245, 225, 206,150));
+        cuadro.setBounds(340, 80, 500, 500);
+        cuadro.setLayout(null);
         
 
         //*Mensajes */
