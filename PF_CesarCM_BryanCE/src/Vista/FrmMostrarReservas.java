@@ -7,12 +7,12 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.*;
 
-public class FrmEliminarReserva extends JFrame {
+public class FrmMostrarReservas extends JFrame {
     private JTable tablaReservas;
     private DefaultTableModel modeloTabla;
 
-    public FrmEliminarReserva() {
-        setTitle("Eliminar Reserva");
+    public FrmMostrarReservas() {
+        setTitle("Ver Reservas");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setSize(1190, 720);
         setLocationRelativeTo(null); // Centrar la ventana
@@ -30,30 +30,23 @@ public class FrmEliminarReserva extends JFrame {
         Imagen.setSize(Back.getIconWidth(), Back.getIconHeight());
 
         // Título centrado
-        JLabel titleLabel = new JLabel("Eliminar Reserva");
+        JLabel titleLabel = new JLabel("Reservas Actuales");
         titleLabel.setFont(new Font("Arial", Font.BOLD, 20));
         titleLabel.setBounds(265, 20, 250, 40);
+        cuadro.add(titleLabel);
+
 
         // Configuración de la tabla
-        String[] columnas = {"ID", "Número de Mesa", "Cédula", "ID Restaurante", "Fecha", "Descripción", "Eliminar"};
+        String[] columnas = {"ID", "Número de Mesa", "Cédula", "ID Restaurante", "Fecha", "Descripción"};
         modeloTabla = new DefaultTableModel(columnas, 0);
         tablaReservas = new JTable(modeloTabla);
         JScrollPane scrollPane = new JScrollPane(tablaReservas);
         scrollPane.setBounds(50, 80, 600, 250);
         cuadro.add(scrollPane);
 
-        // Botones centrados
-        JButton eliminarBtn = crearBoton("Eliminar Seleccionada", 100, 340);
-        JButton cancelarBtn = crearBoton("Regresar", 400, 340);
-        
-        // Botón "Regresar al menú"
-        JButton regresarBtn = crearBoton("Regresar al Menú", 250, 400);
+        // Botón "Regresar al Menú"
+        JButton regresarBtn = crearBoton("Regresar al Menú", 250, 340);
         cuadro.add(regresarBtn);
-
-        // Añadir botones y título al cuadro
-        cuadro.add(titleLabel);
-        cuadro.add(eliminarBtn);
-        cuadro.add(cancelarBtn);
 
         // Añadir el cuadro y fondo al contenedor principal
         add(cuadro);
@@ -63,33 +56,7 @@ public class FrmEliminarReserva extends JFrame {
         // Llenar la tabla con las reservas
         cargarReservas();
 
-        // Acción del botón Eliminar
-        eliminarBtn.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                int selectedRow = tablaReservas.getSelectedRow();
-                if (selectedRow == -1) {
-                    JOptionPane.showMessageDialog(null, "Por favor, seleccione una reserva.");
-                } else {
-                    int idReserva = (int) modeloTabla.getValueAt(selectedRow, 0);
-                    eliminarReserva(idReserva);
-                }
-            }
-        });
-
-        // Acción del botón Cancelar
-        cancelarBtn.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                // Cerrar la ventana actual
-                setVisible(false);
-                dispose();
-                
-                new FrmMenuPrincipal();  // Reemplaza con tu clase de menú
-            }
-        });
-
-        // Acción del botón "Regresar al menú"
+        // Acción del botón "Regresar al Menú"
         regresarBtn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -113,7 +80,7 @@ public class FrmEliminarReserva extends JFrame {
              CallableStatement stmt = conn.prepareCall(query);
              ResultSet rs = stmt.executeQuery()) {
 
-            modeloTabla.setRowCount(0);
+            modeloTabla.setRowCount(0); // Limpiar la tabla antes de cargar nuevos datos
 
             // Recorrer los resultados y agregar las filas a la tabla
             while (rs.next()) {
@@ -123,40 +90,12 @@ public class FrmEliminarReserva extends JFrame {
                 int idRestaurante = rs.getInt("IDRestaurante");
                 String fecha = rs.getString("Fecha");
                 String descripcion = rs.getString("Descripcion");
-                
-                modeloTabla.addRow(new Object[]{idReserva, numeroMesa, cedula, idRestaurante, fecha, descripcion, "Eliminar"});
+
+                modeloTabla.addRow(new Object[]{idReserva, numeroMesa, cedula, idRestaurante, fecha, descripcion});
             }
 
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, "Error al cargar las reservas: " + ex.getMessage());
-        }
-    }
-
-    // Método para eliminar reserva desde la base de datos
-    private void eliminarReserva(int idReserva) {
-        String url = "jdbc:mysql://localhost:3306/bd_proyecto_final";
-        String usuario = "root";
-        String contrasena = "12345";
-
-        // Llamada al procedimiento almacenado para eliminar
-        String query = "{call DeleteReserva(?)}";
-
-        try (Connection conn = DriverManager.getConnection(url, usuario, contrasena);
-             CallableStatement stmt = conn.prepareCall(query)) {
-
-            stmt.setInt(1, idReserva);
-
-            int rowsAffected = stmt.executeUpdate();
-
-            if (rowsAffected > 0) {
-                JOptionPane.showMessageDialog(null, "Reserva eliminada exitosamente.");
-                cargarReservas(); // Recargar las reservas después de eliminar una
-            } else {
-                JOptionPane.showMessageDialog(null, "No se encontró una reserva con ese ID.");
-            }
-
-        } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Error al eliminar la reserva: " + ex.getMessage());
         }
     }
 
@@ -173,6 +112,4 @@ public class FrmEliminarReserva extends JFrame {
         boton.setOpaque(true);
         return boton;
     }
-
 }
-

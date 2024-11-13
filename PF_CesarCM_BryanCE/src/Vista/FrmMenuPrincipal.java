@@ -40,7 +40,7 @@ public class FrmMenuPrincipal extends JFrame {
     
         //* Panel izquierdo - Reservas */
         JPanel panelReservas = new JPanel(null);
-        panelReservas.setBackground(new Color(245, 225, 206, 80)); // Color semitransparente para simular "blur"
+        panelReservas.setBackground(new Color(245, 225, 206, 80)); // Color semitransparente 
         panelReservas.setBounds(0, 0, 495, 600);
     
         //* Panel derecho - Mesas */
@@ -132,7 +132,24 @@ public class FrmMenuPrincipal extends JFrame {
     
         setVisible(true);
 
-
+        btnMostrarReserva.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                new FrmMostrarReservas();
+                dispose();
+            }
+        });
+    
+        setVisible(true);
+        btnMostrarMesa.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                new FrmMostrarMesas();
+                dispose();
+            }
+        });
+    
+        setVisible(true);
 
     }
     
