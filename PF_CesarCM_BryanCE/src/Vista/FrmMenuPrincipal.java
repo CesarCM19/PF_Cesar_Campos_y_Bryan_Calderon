@@ -158,6 +158,15 @@ public class FrmMenuPrincipal extends JFrame {
         });
     
         setVisible(true);
+        btnActualizarMesa.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                new FrmActualizarMesa();
+                dispose();
+            }
+        });
+    
+        setVisible(true);
 
     }
     
