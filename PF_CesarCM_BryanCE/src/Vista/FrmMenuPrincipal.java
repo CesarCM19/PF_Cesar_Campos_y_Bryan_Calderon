@@ -39,7 +39,7 @@ public class FrmMenuPrincipal extends JFrame {
         ImageIcon Añadir = new ImageIcon("PF_CesarCM_BryanCE\\src\\Images\\icons8-añadir-50.png");
         ImageIcon Ver = new ImageIcon("PF_CesarCM_BryanCE\\src\\Images\\icons8-ver-50.png");
         ImageIcon Eliminar = new ImageIcon("PF_CesarCM_BryanCE\\src\\Images\\icons8-borrar-para-siempre-50.png");
-        ImageIcon Actualizar= new ImageIcon("C:\\Users\\calde\\Documents\\GitHub\\PF_Cesar_Campos_y_Bryan_Calderon\\PF_CesarCM_BryanCE\\src\\Images\\icons8-actualizar-50.png");
+        ImageIcon Actualizar= new ImageIcon("PF_CesarCM_BryanCE\\src\\Images\\icons8-actualizar-50.png");
         ImageIcon Cerrar = new ImageIcon("PF_CesarCM_BryanCE\\src\\Images\\icons8-cambiar-usuario-masculino-50.png");
 
         layeredPane.add(backgroundLabel, JLayeredPane.DEFAULT_LAYER); // Agrega la imagen de fondo en la capa inferior
