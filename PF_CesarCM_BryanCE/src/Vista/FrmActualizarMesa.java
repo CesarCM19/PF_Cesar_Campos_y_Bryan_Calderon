@@ -11,6 +11,7 @@ public class FrmActualizarMesa extends JFrame {
     private DefaultTableModel modeloTabla;
     private JTextField numMesaField, idRestField, ubicacionField, tamanoField;
 
+    @SuppressWarnings("unused")
     public FrmActualizarMesa() {
         //* Configuración de la ventana */
         setTitle("Actualizar Mesa");
