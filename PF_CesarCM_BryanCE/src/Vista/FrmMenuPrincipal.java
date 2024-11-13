@@ -40,7 +40,7 @@ public class FrmMenuPrincipal extends JFrame {
     
         //* Panel izquierdo - Reservas */
         JPanel panelReservas = new JPanel(null);
-        panelReservas.setBackground(new Color(245, 225, 206, 80)); // Color semitransparente para simular "blur"
+        panelReservas.setBackground(new Color(245, 225, 206, 80)); // Color semitransparente 
         panelReservas.setBounds(0, 0, 495, 600);
     
         //* Panel derecho - Mesas */
