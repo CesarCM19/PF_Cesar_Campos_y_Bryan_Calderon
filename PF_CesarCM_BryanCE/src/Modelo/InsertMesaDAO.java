@@ -34,7 +34,7 @@ try (Connection conn = conectar();
     int comprobante = stmt.executeUpdate();
 
     // Mostrar mensaje según el valor de comprobante
-    if (comprobante==1) {
+    if (comprobante>0) {
         JOptionPane.showMessageDialog(null, "Inserción exitosa de la mesa.", "Éxito", JOptionPane.INFORMATION_MESSAGE);
         return true;
     } else {
