@@ -45,17 +45,13 @@ public class FrmInsertReserva extends JFrame {
         JTextField CedulaField = new JTextField();
         JTextField DescripcionField= new JTextField();
 
+        
+
 
         //*Botones */
-        JButton Insertbtn = new JButton("Guardar Reserva");
-        Insertbtn.setFont(new Font("Arial",Font.BOLD,16));
-        Insertbtn.setBorderPainted(false);
-        Insertbtn.setContentAreaFilled(false);
-        JButton Salirbtn = new JButton("Atrás");
-        Salirbtn.setFont(new Font("Arial",Font.BOLD,16));
-        Salirbtn.setBorderPainted(false);
-        Salirbtn.setContentAreaFilled(false);
-
+        JButton Insertbtn = crearBoton("Guardar Mesa", 620, 580);
+        JButton Salirbtn = crearBoton("Atrás", 430, 580);
+        
         Insertbtn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -78,8 +74,7 @@ public class FrmInsertReserva extends JFrame {
         //*Ubicaciones */
         cuadro.setBounds(340,40,500,600);
         Bienvenida.setBounds(420,70,350,80);
-        Insertbtn.setBounds(560,580,200,50);
-        Salirbtn.setBounds(410,580,150,50);
+  
         Cedulalbl.setBounds(390,160,350,40);
         CedulaField.setBounds(390,200,400,40);
         Descripcion.setBounds(390,480,300,40);
@@ -112,4 +107,21 @@ public class FrmInsertReserva extends JFrame {
         Ventana.add(Imagen);
         Ventana.setVisible(true);
     }//Fin del constructor 
+
+
+    // Método para crear botones uniformes
+    private JButton crearBoton(String texto, int x, int y) {
+        JButton boton = new JButton(texto);
+        boton.setFont(new Font("Arial", Font.BOLD, 16));
+        boton.setBounds(x, y, 130, 30);
+        boton.setBackground(new Color(186, 140, 99));
+        boton.setForeground(Color.WHITE);
+        boton.setFocusPainted(false);
+        boton.setBorder(BorderFactory.createLineBorder(new Color(186, 140, 99), 1, true));
+        boton.setContentAreaFilled(true);
+        boton.setOpaque(true);
+        return boton;
+    }
+
 }//Fin de la clase
+

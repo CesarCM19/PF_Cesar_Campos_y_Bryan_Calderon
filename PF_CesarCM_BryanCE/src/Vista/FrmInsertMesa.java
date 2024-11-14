@@ -6,6 +6,7 @@ import javax.swing.*;
 import PF_CesarCM_BryanCE.src.Modelo.InsertMesaDAO;
 
 public class FrmInsertMesa extends JFrame {
+
     public FrmInsertMesa(){
         //*Configuración de la ventana */
         JFrame Ventana = new JFrame("Reservas");
@@ -18,10 +19,9 @@ public class FrmInsertMesa extends JFrame {
         ImageIcon Back = new ImageIcon("PF_CesarCM_BryanCE\\src\\Images\\RestauranteFondo.png");
         JLabel Imagen = new JLabel(Back);
         Imagen.setSize(Back.getIconWidth(), Back.getIconHeight());
-        JPanel cuadro = new JPanel ();
+        JPanel cuadro = new JPanel();
         cuadro.setBackground(new Color(245, 225, 206,180));
         
-
         //*Mensajes */
         JLabel Bienvenida = new JLabel("Agregar nueva mesa:");
         JLabel NumeroMesa = new JLabel("Ingrese el número de la mesa:");
@@ -36,16 +36,10 @@ public class FrmInsertMesa extends JFrame {
         JTextField NumMesaField = new JTextField("Numero");
         JTextField TamañoField = new JTextField("A");
 
-
-        //*Botones */
-        JButton Insertbtn = new JButton("Guardar Mesa");
-        Insertbtn.setFont(new Font("Arial",Font.BOLD,16));
-        Insertbtn.setBorderPainted(false);
-        Insertbtn.setContentAreaFilled(false);
-        JButton Salirbtn = new JButton("Atrás");
-        Salirbtn.setFont(new Font("Arial",Font.BOLD,16));
-        Salirbtn.setBorderPainted(false);
-        Salirbtn.setContentAreaFilled(false);
+        //*Botones creados con el método crearBoton */
+        JButton Insertbtn = crearBoton("Guardar Mesa", 620, 495);
+        JButton Salirbtn = crearBoton("Atrás", 430, 495);
+        
 
         Insertbtn.addActionListener(new ActionListener() {
             @Override
@@ -58,6 +52,7 @@ public class FrmInsertMesa extends JFrame {
                 InsertMesaDAO.insertMesa(NumeroMesa,IDRestaurante,Ubicacion,Tamaño);
             }
         });
+
         Salirbtn.addActionListener(new ActionListener() {
             public void actionPerformed (ActionEvent e){
                 new FrmMenuPrincipal();
@@ -68,8 +63,6 @@ public class FrmInsertMesa extends JFrame {
         //*Ubicaciones */
         cuadro.setBounds(340,40,500,500);
         Bienvenida.setBounds(480,70,350,80);
-        Insertbtn.setBounds(560,480,200,50);
-        Salirbtn.setBounds(410,480,150,50);
         NumeroMesa.setBounds(390,160,350,40);
         NumMesaField.setBounds(390,200,400,40);
         Ubicacion.setBounds(390,240,200,40);
@@ -78,9 +71,7 @@ public class FrmInsertMesa extends JFrame {
         IdRest.setBounds(390,440,400,40);
         TamañoField.setBounds(390,360,400,40);
         Tamaño.setBounds(390,320,400,40);
-        
-        
-        
+
         //*Agregar Elementos */
         Ventana.add(TamañoField);
         Ventana.add(NumMesaField);
@@ -91,12 +82,24 @@ public class FrmInsertMesa extends JFrame {
         Ventana.add(Bienvenida);
         Ventana.add(NumeroMesa);
         Ventana.add(IDRestaurante);
-        Ventana.add(NumMesaField);
-        Ventana.add(IdRest);
         Ventana.add(Insertbtn);
         Ventana.add(Salirbtn);
         Ventana.add(cuadro);
         Ventana.add(Imagen);
         Ventana.setVisible(true);
     }//Fin del constructor 
+
+    // Método para crear botones uniformes
+    private JButton crearBoton(String texto, int x, int y) {
+        JButton boton = new JButton(texto);
+        boton.setFont(new Font("Arial", Font.BOLD, 16));
+        boton.setBounds(x, y, 130, 30);
+        boton.setBackground(new Color(186, 140, 99));
+        boton.setForeground(Color.WHITE);
+        boton.setFocusPainted(false);
+        boton.setBorder(BorderFactory.createLineBorder(new Color(186, 140, 99), 1, true));
+        boton.setContentAreaFilled(true);
+        boton.setOpaque(true);
+        return boton;
+    }
 }
