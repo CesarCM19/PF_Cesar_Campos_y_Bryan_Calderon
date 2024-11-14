@@ -207,5 +207,5 @@ JLabel imagen = new JLabel(back);
         boton.setOpaque(true);
         return boton;
     }
-//com
+//comentario
 }
