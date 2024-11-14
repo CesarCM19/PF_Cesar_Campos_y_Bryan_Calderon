@@ -31,10 +31,10 @@ public class FrmInsertMesa extends JFrame {
         JLabel Tamaño = new JLabel("Ingrese el tamaño de la mesa:");
 
         //* Campos */
-        JTextField UbicacionField = new JTextField("ubica");
-        JTextField IdRest = new JTextField("ID");
-        JTextField NumMesaField = new JTextField("Numero");
-        JTextField TamañoField = new JTextField("A");
+        JTextField UbicacionField = new JTextField();
+        JTextField IdRest = new JTextField();
+        JTextField NumMesaField = new JTextField();
+        JTextField TamañoField = new JTextField();
 
         //*Botones creados con el método crearBoton */
         JButton Insertbtn = crearBoton("Guardar Mesa", 620, 495);
