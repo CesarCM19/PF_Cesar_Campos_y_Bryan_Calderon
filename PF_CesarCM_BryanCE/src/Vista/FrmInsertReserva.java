@@ -30,7 +30,7 @@ public class FrmInsertReserva extends JFrame {
         JLabel NumMesa = new JLabel("Numero de Mesa:");
         JLabel Cedulalbl = new JLabel ("Ingrese la cédula del cliente que reserva:");
         JLabel IDRestaurante = new JLabel("ID del Restaurante:");
-        JLabel Fecha = new JLabel("Ingrese la fecha de reserva:");
+        JLabel Fecha = new JLabel("Ingrese la fecha y hora de la reserva: (Año-Mes-Día Hora:Minutos:Segundos)");
         JLabel Descripcion = new JLabel("Breve descripción de la reserva:");
 
         //* Campos */
