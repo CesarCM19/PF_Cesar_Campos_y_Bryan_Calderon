@@ -22,7 +22,7 @@ public class FrmMostrarReservas extends JFrame {
         JPanel cuadro = new JPanel();
         cuadro.setBackground(new Color(245, 225, 206, 180)); // Transparencia suave
         cuadro.setLayout(null);  // Usamos null layout para posicionar manualmente
-        cuadro.setBounds(250, 110, 700, 400);
+        cuadro.setBounds(150, 110, 900, 400);
 
         // Configuración del fondo
         ImageIcon Back = new ImageIcon("PF_CesarCM_BryanCE\\src\\Images\\RestauranteFondo.png");
@@ -32,7 +32,7 @@ public class FrmMostrarReservas extends JFrame {
         // Título centrado
         JLabel titleLabel = new JLabel("Reservas Actuales");
         titleLabel.setFont(new Font("Arial", Font.BOLD, 20));
-        titleLabel.setBounds(265, 20, 250, 40);
+        titleLabel.setBounds(335, 20, 250, 40);
         cuadro.add(titleLabel);
 
 
@@ -41,11 +41,11 @@ public class FrmMostrarReservas extends JFrame {
         modeloTabla = new DefaultTableModel(columnas, 0);
         tablaReservas = new JTable(modeloTabla);
         JScrollPane scrollPane = new JScrollPane(tablaReservas);
-        scrollPane.setBounds(50, 80, 600, 250);
+        scrollPane.setBounds(50, 80, 800, 250);
         cuadro.add(scrollPane);
 
         // Botón "Regresar al Menú"
-        JButton regresarBtn = crearBoton("Regresar al Menú", 250, 340);
+        JButton regresarBtn = crearBoton("Regresar al Menú", 335, 340);
         cuadro.add(regresarBtn);
 
         // Añadir el cuadro y fondo al contenedor principal
