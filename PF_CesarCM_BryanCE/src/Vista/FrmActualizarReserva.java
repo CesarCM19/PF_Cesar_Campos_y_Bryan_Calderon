@@ -9,7 +9,7 @@ import java.awt.*;
 import java.awt.event.*;
 import java.sql.*;
 
-public class FrmUpdateReserva extends JFrame {
+public class FrmActualizarReserva extends JFrame {
     private JTable tablaReservas;
     private DefaultTableModel modeloTabla;
 
@@ -21,7 +21,7 @@ public class FrmUpdateReserva extends JFrame {
     private JTextField nFecha;
     private JTextField nDescripcion;
 
-    public FrmUpdateReserva(){
+    public FrmActualizarReserva(){
         setTitle("Ver Reservas");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setSize(1190, 720);

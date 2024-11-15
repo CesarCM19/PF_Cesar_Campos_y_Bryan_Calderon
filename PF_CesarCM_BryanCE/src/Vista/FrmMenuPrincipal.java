@@ -171,7 +171,7 @@ public class FrmMenuPrincipal extends JFrame {
         });
         btnActualizarReserva.addActionListener(new ActionListener(){
             public void actionPerformed (ActionEvent e){
-                new FrmUpdateReserva();
+                new FrmActualizarReserva();
                 dispose();
             }
         });
