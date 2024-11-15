@@ -3,9 +3,13 @@ package PF_CesarCM_BryanCE.src.Modelo;
 import java.sql.*;
 
 public class conexion {
+        // Datos de conexión a la base de datos
+
     private static final String URL = "jdbc:mysql://localhost:3306/bd_proyecto_final";
     private static final String USUARIO = "root";
     private static final String CONTRASEÑA = "12345";
+
+        // Método para establecer la conexión a la base de datos
 
     public static Connection conectar() {
         try {
@@ -18,18 +22,18 @@ public class conexion {
         }
     }
 
-    // Método de autenticación
+    // Método para autenticar al usuario llamando al procedimiento almacenado
     public static boolean autenticacion(String usuario, String contraseña) {
         String sql = "{CALL AutenticarUsuario(?, ?, ?)}";
         try (Connection conn = conectar();
             CallableStatement stmt = conn.prepareCall(sql)) {
 
-            stmt.setString(1, usuario);
-            stmt.setString(2, contraseña);
-            stmt.registerOutParameter(3, Types.BOOLEAN);
+            stmt.setString(1, usuario); // Usuario ingresado
+            stmt.setString(2, contraseña); // Contraseña ingresada
+            stmt.registerOutParameter(3, Types.BOOLEAN); // Valor devuelto por el procedimiento
 
             stmt.execute();
-            return stmt.getBoolean(3); // Retorna true si el usuario es autenticado, false si no
+            return stmt.getBoolean(3); // Retorna true si autenticación es exitosa
 
         } catch (SQLException e) {
             System.err.println("Error en autenticación: " + e.getMessage());

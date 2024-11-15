@@ -36,12 +36,14 @@ public class FrmEliminarMesa extends JFrame {
         titleLabel.setBounds(280, 20, 250, 40);
 
         //* Configuración de la tabla */
-        String[] columnas = {"Número de Mesa", "ID Restaurante", "Ubicación", "Tamaño"};
-        modeloTabla = new DefaultTableModel(columnas, 0);
-        tablaMesas = new JTable(modeloTabla);
-        JScrollPane scrollPane = new JScrollPane(tablaMesas);
-        scrollPane.setBounds(50, 80, 600, 250);
-        cuadro.add(scrollPane);
+
+        String[] columnas = {"Número de Mesa", "ID Restaurante", "Ubicación", "Tamaño"}; // Arreglo Nombres de las columnas para la tabla.
+        modeloTabla = new DefaultTableModel(columnas, 0); // Modelo de tabla sin filas iniciales, usando los nombres de columna.
+        tablaMesas = new JTable(modeloTabla); // Creación de la tabla usando el modelo de datos.
+        JScrollPane scrollPane = new JScrollPane(tablaMesas); // Añadir la tabla a un JScrollPane para barras de desplazamiento.
+        scrollPane.setBounds(50, 80, 600, 250); // tamaño y posición del JScrollPane en el panel.
+        cuadro.add(scrollPane); // Agregar el JScrollPane (con la tabla) al panel 'cuadro'.
+
 
         //* Botones de Eliminar y Cancelar */
         JButton eliminarBtn = crearBoton("Eliminar Seleccionada", 250, 350);
@@ -98,8 +100,8 @@ public class FrmEliminarMesa extends JFrame {
         String query = "{call SelectMesas()}";
 
         try (Connection conn = DriverManager.getConnection(url, usuario, contrasena);
-            CallableStatement stmt = conn.prepareCall(query);
-            ResultSet rs = stmt.executeQuery()) {
+             CallableStatement stmt = conn.prepareCall(query);
+             ResultSet rs = stmt.executeQuery()) {
 
             modeloTabla.setRowCount(0);
 
@@ -128,7 +130,7 @@ public class FrmEliminarMesa extends JFrame {
         String query = "{call DeleteMesas(?)}";
 
         try (Connection conn = DriverManager.getConnection(url, usuario, contrasena);
-            CallableStatement stmt = conn.prepareCall(query)) {
+             CallableStatement stmt = conn.prepareCall(query)) {
 
             stmt.setString(1, numeroMesa);
 
