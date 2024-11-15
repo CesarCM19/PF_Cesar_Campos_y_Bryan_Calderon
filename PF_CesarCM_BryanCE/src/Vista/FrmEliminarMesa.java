@@ -98,8 +98,8 @@ public class FrmEliminarMesa extends JFrame {
         String query = "{call SelectMesas()}";
 
         try (Connection conn = DriverManager.getConnection(url, usuario, contrasena);
-             CallableStatement stmt = conn.prepareCall(query);
-             ResultSet rs = stmt.executeQuery()) {
+            CallableStatement stmt = conn.prepareCall(query);
+            ResultSet rs = stmt.executeQuery()) {
 
             modeloTabla.setRowCount(0);
 
@@ -128,7 +128,7 @@ public class FrmEliminarMesa extends JFrame {
         String query = "{call DeleteMesas(?)}";
 
         try (Connection conn = DriverManager.getConnection(url, usuario, contrasena);
-             CallableStatement stmt = conn.prepareCall(query)) {
+            CallableStatement stmt = conn.prepareCall(query)) {
 
             stmt.setString(1, numeroMesa);
 

@@ -46,7 +46,7 @@ try (Connection conn = conectar();
 
 } catch (SQLException e) {
     // Manejar errores de SQL y mostrar un mensaje de error
-    JOptionPane.showMessageDialog(null, "Error al actualizar la reserva: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+    JOptionPane.showMessageDialog(null, "Debe seleccionar una mesa existente!", "Error", JOptionPane.ERROR_MESSAGE);
     return false;
 }
 }

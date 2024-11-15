@@ -110,8 +110,8 @@ public class FrmEliminarReserva extends JFrame {
         String query = "{call SelectReservas()}";
 
         try (Connection conn = DriverManager.getConnection(url, usuario, contrasena);
-             CallableStatement stmt = conn.prepareCall(query);
-             ResultSet rs = stmt.executeQuery()) {
+            CallableStatement stmt = conn.prepareCall(query);
+            ResultSet rs = stmt.executeQuery()) {
 
             modeloTabla.setRowCount(0);
 

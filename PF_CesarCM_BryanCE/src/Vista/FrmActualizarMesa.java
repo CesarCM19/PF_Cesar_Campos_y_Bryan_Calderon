@@ -60,6 +60,7 @@ JLabel imagen = new JLabel(back);
         cuadro.add(numeroMesaLabel);
 
         numMesaField = new JTextField();
+        numMesaField.setEditable(false);
         numMesaField.setBounds(800, 130, 200, 30);
         cuadro.add(numMesaField);
 
@@ -149,8 +150,8 @@ JLabel imagen = new JLabel(back);
         String query = "{call SelectMesas()}";
 
         try (Connection conn = DriverManager.getConnection(url, usuario, contrasena);
-             CallableStatement stmt = conn.prepareCall(query);
-             ResultSet rs = stmt.executeQuery()) {
+            CallableStatement stmt = conn.prepareCall(query);
+            ResultSet rs = stmt.executeQuery()) {
 
             modeloTabla.setRowCount(0);
 
@@ -175,7 +176,7 @@ JLabel imagen = new JLabel(back);
         String query = "{call UpdateMesas(?, ?, ?, ?)}";
 
         try (Connection conn = DriverManager.getConnection(url, usuario, contrasena);
-             CallableStatement stmt = conn.prepareCall(query)) {
+            CallableStatement stmt = conn.prepareCall(query)) {
 
             stmt.setString(1, numeroMesa);
             stmt.setString(2, idRestaurante);

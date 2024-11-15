@@ -45,6 +45,7 @@ public class FrmUpdateReserva extends JFrame {
         JLabel ID = new JLabel("ID de la reserva a actualizar:");
         IDtxt = new JTextField();
         IDtxt.setBounds(815,95,200,30);
+        IDtxt.setEditable(false);
         JLabel Mesa = new JLabel("Nuevo Número de Mesa:");
         Mesa.setBounds(720,130,400,30);
         nMesa = new JTextField();

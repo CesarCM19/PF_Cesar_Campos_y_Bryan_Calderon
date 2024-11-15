@@ -45,7 +45,7 @@ public static boolean insertarReserva(String NumeroMesa, String Cedula, String I
 
     } catch (SQLException e) {
         // Manejar errores de SQL y mostrar un mensaje de error
-        JOptionPane.showMessageDialog(null, "Error al insertar reserva: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+        JOptionPane.showMessageDialog(null, "Debe insertar una mesa existente!", "Error", JOptionPane.ERROR_MESSAGE);
         return false;
     }
 }
