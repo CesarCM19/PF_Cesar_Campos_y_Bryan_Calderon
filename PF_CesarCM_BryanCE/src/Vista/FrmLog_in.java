@@ -69,7 +69,6 @@ public class FrmLog_in extends JFrame {
         usuarioField.setBounds(390,300,400,40);    
         contraseña.setBounds(390,360,150,40);
         contraseñaField.setBounds(390,400,400,40);
-        //Copas.setBounds(350,100,100,100);
         Restaurante.setBounds(380,150,100,100);
         Restaurante2.setBounds(700,150,100,100);
         

@@ -30,7 +30,7 @@ public class FrmInsertReserva extends JFrame {
         JLabel NumMesa = new JLabel("Numero de Mesa:");
         JLabel Cedulalbl = new JLabel ("Ingrese la cédula del cliente que reserva:");
         JLabel IDRestaurante = new JLabel("ID del Restaurante:");
-        JLabel Fecha = new JLabel("Ingrese la fecha y hora de la reserva: (Año-Mes-Día Hora:Minutos:Segundos)");
+        JLabel Fecha = new JLabel("Ingrese la fecha de la reserva: (Año-Mes-Día Hora:Minutos:Segundos)");
         JLabel Descripcion = new JLabel("Breve descripción de la reserva:");
 
         //* Campos */
@@ -74,16 +74,15 @@ public class FrmInsertReserva extends JFrame {
         //*Ubicaciones */
         cuadro.setBounds(340,40,500,600);
         Bienvenida.setBounds(420,70,350,80);
-  
         Cedulalbl.setBounds(390,160,350,40);
         CedulaField.setBounds(390,200,400,40);
         Descripcion.setBounds(390,480,300,40);
         DescripcionField.setBounds(390,520,400,40);
         NumMesa.setBounds(390,320,150,40);
         NumMesaField.setBounds(390,360,400,40); 
-        Fecha.setBounds(390,240,200,40);
+        Fecha.setBounds(390,240,500,40);
         FechaField.setBounds(390,280,400,40);
-        IDRestaurante.setBounds(390,400,150,40);
+        IDRestaurante.setBounds(390,400,100,40);
         IDRestauranteField.setBounds(390,440,400,40);
         
         

@@ -67,7 +67,7 @@ public class FrmInsertMesa extends JFrame {
         NumMesaField.setBounds(390,200,400,40);
         Ubicacion.setBounds(390,240,200,40);
         UbicacionField.setBounds(390,280,400,40);
-        IDRestaurante.setBounds(390,400,150,40);
+        IDRestaurante.setBounds(390,400,500,40);
         IdRest.setBounds(390,440,400,40);
         TamañoField.setBounds(390,360,400,40);
         Tamaño.setBounds(390,320,400,40);
